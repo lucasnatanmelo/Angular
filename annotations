@@ -16,3 +16,15 @@ Criar componentes:
 
 Site para icones do material:
   material.io/resources/icons/?style=baseline
+
+Para criar diretivas - atributo:
+  ng g d directives/red
+
+Para criar diretivas - estrutural:
+  ng g d directives/for
+
+Para criar os serviços:
+  ng g s components/product/product
+
+Criação de tabelas - Angular Material Schematicas:
+  ng generate @angular/material:table components/product/product-read2

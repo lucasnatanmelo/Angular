@@ -1,9 +1,15 @@
 <mat-toolbar class="footer">
   <span>
     Desenvolvido com 
-    <i class="material-icons red v-middle">
+    <!-- Utilizado diretiva de atributo - appRed --> 
+    <i class="material-icons v-middle" appRed>
       favorite
     </i>
-    por <strong>Lucas Natan</strong>
+    <!-- Utilizado estilização css - red --> 
+    por <strong class="red">Lucas Natan</strong>
   </span>
+  <ul>
+    <li *myFor="let n in [1, 2, 3]">{{ n }}</li>
+  </ul>
+
 </mat-toolbar>
