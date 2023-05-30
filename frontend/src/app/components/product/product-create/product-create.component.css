@@ -1,10 +1,25 @@
+.custom-card {
+  padding: 1rem;
+}
+
+.title {
+  margin-bottom: 10px;
+}
+
 form {
   display: flex;
   flex-direction: column;
 }
 
-button {
-  /*margin: 20px 25px 0px 0px;*/
-  margin-top: 20px;
-  margin-right: 10px;
+.form-buttons {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.form-buttons button {
+  width: 100px;
+}
+
+.form-buttons .second-button {
+  margin-left: 1rem; 
 }

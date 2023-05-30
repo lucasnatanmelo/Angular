@@ -1,8 +1,8 @@
-<mat-card>
-  <mat-card-title>
+<mat-card class="custom-card">
+  <mat-card-title class="title">
     Excluir Produto
   </mat-card-title>
-  <form>
+  <form class="form-container">
     <mat-form-field>
       <input 
         matInput 
@@ -21,12 +21,24 @@
         disabled
       >
     </mat-form-field>
+    <mat-form-field>
+      <mat-label>Categoria</mat-label>
+      <mat-select [(ngModel)]="product.category" name="category">
+        <mat-option value="eletronicos">Eletrônicos</mat-option>
+        <mat-option value="eletrodomesticos">Eletrodomésticos</mat-option>
+        <mat-option value="moda">Moda e Acessórios</mat-option>
+        <mat-option value="casa">Casa e Decoração</mat-option>
+        <mat-option value="beleza">Beleza e Cuidados Pessoais</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div class="form-buttons">
+      <button mat-raised-button (click)="deleteProduct()" color="warn">
+        Excluir
+      </button>
+      <button mat-raised-button class="second-button" (click)="cancel()">
+        Cancelar
+      </button>
+    </div>
   </form>
-  <button mat-raised-button (click)="deleteProduct()" color="warn">
-    Excluir
-  </button>
-  <button mat-raised-button (click)="cancel()">
-    Cancelar
-  </button>
 </mat-card>
 

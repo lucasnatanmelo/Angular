@@ -12,8 +12,9 @@ export class ProductDeleteComponent {
 
   product: Product = {
     name: '',
-    price: 0
-  }
+    price: 0,
+    category: ''
+  };
 
   constructor(
     private productService: ProductService,

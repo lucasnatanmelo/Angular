@@ -22,10 +22,10 @@ export class ProductService {
   showMessage(msg: string, isError: boolean = false): void {
     this.snackBar.open(msg, 'X', {
       duration: 3000,
-      horizontalPosition: "right",
-      verticalPosition: "top",
-      panelClass: !!isError ? ['msg-error'] : ['msg-success']
-    })
+      horizontalPosition: 'right',
+      verticalPosition: 'top',
+      panelClass: isError ? ['msg-error'] : ['msg-success'] // Add class based on isError value
+    });
   }
 
   create(product: Product): Observable<Product> {

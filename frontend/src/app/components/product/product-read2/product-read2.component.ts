@@ -1,31 +1,36 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
-import { MatTable } from '@angular/material/table';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { ProductRead2DataSource } from './product-read2-datasource';
+import { MatTableDataSource } from '@angular/material/table';
 import { Product } from '../product.model';
+import { ProductService } from './../product.service';
 
 @Component({
   selector: 'app-product-read2',
   templateUrl: './product-read2.component.html',
   styleUrls: ['./product-read2.component.css']
 })
-export class ProductRead2Component implements AfterViewInit {
+export class ProductRead2Component implements OnInit, AfterViewInit {
+  dataSource!: MatTableDataSource<Product>;
+  displayedColumns: string[] = ['id', 'name', 'price', 'category', 'action'];
+
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  @ViewChild(MatTable) table!: MatTable<Product>;
-  dataSource: ProductRead2DataSource;
 
-  /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name', 'price'];
+  constructor(private productService: ProductService) { }
 
-  constructor() {
-    this.dataSource = new ProductRead2DataSource();
+  ngOnInit(): void {
+    this.productService.read().subscribe((products: Product[]) => {
+      this.dataSource = new MatTableDataSource(products);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    });
   }
 
   ngAfterViewInit(): void {
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-    this.table.dataSource = this.dataSource;
+    if (this.dataSource) {
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    }
   }
 }

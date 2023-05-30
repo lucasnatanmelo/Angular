@@ -1,24 +1,40 @@
 {
   "products": [
     {
-      "name": "mouse",
+      "name": "Fogao",
       "price": "10",
+      "category": "Eletrônicos",
+      "id": 1
+    },
+    {
+      "name": "sdvsdv",
+      "price": "23423",
+      "category": "Casa e Decoração",
+      "id": 2
+    },
+    {
+      "name": "gnfgn",
+      "price": "0sfgsg",
+      "category": "Eletrônicos",
+      "id": 3
+    },
+    {
+      "name": "nvnbvn",
+      "price": "werwer",
+      "category": "Eletrônicos",
+      "id": 4
+    },
+    {
+      "name": "nbmbnmb",
+      "price": "werwer",
+      "category": "Moda e Acessórios",
       "id": 5
     },
     {
-      "name": "Produto de teste",
-      "price": 125.98,
-      "id": 7
-    },
-    {
-      "name": "iPhone",
-      "price": "3000",
-      "id": 8
-    },
-    {
-      "name": "Novo teste",
-      "price": "100",
-      "id": 9
+      "name": "hnghnh",
+      "price": "3434",
+      "category": "Eletrodomésticos",
+      "id": 6
     }
   ]
 }

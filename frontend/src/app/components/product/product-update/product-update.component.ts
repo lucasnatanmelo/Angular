@@ -11,9 +11,10 @@ import { Product } from '../product.model';
 export class ProductUpdateComponent implements OnInit {
 
   product: Product = {
-    name: 'Mocked-Product',
+    name: '',
     price: 0,
-  }
+    category: ''
+  };
 
   constructor(
     private productService: ProductService,
